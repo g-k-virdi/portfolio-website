@@ -1,0 +1,75 @@
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6f2f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1e4d9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Water-like pattern -->
+    <pattern id="water-pattern" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M0,100 Q50,80 100,100 T200,100" fill="none" stroke="#a4c6e2" stroke-width="2" opacity="0.5" />
+      <path d="M0,120 Q50,100 100,120 T200,120" fill="none" stroke="#a4c6e2" stroke-width="2" opacity="0.4" />
+      <path d="M0,140 Q50,120 100,140 T200,140" fill="none" stroke="#a4c6e2" stroke-width="2" opacity="0.3" />
+      <path d="M0,160 Q50,140 100,160 T200,160" fill="none" stroke="#a4c6e2" stroke-width="2" opacity="0.2" />
+      <path d="M0,180 Q50,160 100,180 T200,180" fill="none" stroke="#a4c6e2" stroke-width="2" opacity="0.1" />
+    </pattern>
+    
+    <!-- Lily pad pattern -->
+    <pattern id="lily-pattern" width="300" height="300" patternUnits="userSpaceOnUse">
+      <circle cx="150" cy="150" r="60" fill="#8fb996" opacity="0.2" />
+      <circle cx="50" cy="50" r="40" fill="#8fb996" opacity="0.15" />
+      <circle cx="250" cy="50" r="30" fill="#8fb996" opacity="0.1" />
+      <circle cx="50" cy="250" r="50" fill="#8fb996" opacity="0.15" />
+      <circle cx="250" cy="250" r="35" fill="#8fb996" opacity="0.1" />
+    </pattern>
+    
+    <!-- Flower pattern -->
+    <pattern id="flower-pattern" width="400" height="400" patternUnits="userSpaceOnUse">
+      <circle cx="200" cy="200" r="15" fill="#e8b4b8" opacity="0.6" />
+      <circle cx="220" cy="200" r="15" fill="#e8b4b8" opacity="0.6" />
+      <circle cx="200" cy="220" r="15" fill="#e8b4b8" opacity="0.6" />
+      <circle cx="180" cy="200" r="15" fill="#e8b4b8" opacity="0.6" />
+      <circle cx="200" cy="180" r="15" fill="#e8b4b8" opacity="0.6" />
+      <circle cx="200" cy="200" r="10" fill="#f2e8dc" opacity="0.8" />
+      
+      <circle cx="100" cy="100" r="10" fill="#e8b4b8" opacity="0.4" />
+      <circle cx="115" cy="100" r="10" fill="#e8b4b8" opacity="0.4" />
+      <circle cx="100" cy="115" r="10" fill="#e8b4b8" opacity="0.4" />
+      <circle cx="85" cy="100" r="10" fill="#e8b4b8" opacity="0.4" />
+      <circle cx="100" cy="85" r="10" fill="#e8b4b8" opacity="0.4" />
+      <circle cx="100" cy="100" r="7" fill="#f2e8dc" opacity="0.6" />
+      
+      <circle cx="300" cy="300" r="12" fill="#e8b4b8" opacity="0.5" />
+      <circle cx="312" cy="300" r="12" fill="#e8b4b8" opacity="0.5" />
+      <circle cx="300" cy="312" r="12" fill="#e8b4b8" opacity="0.5" />
+      <circle cx="288" cy="300" r="12" fill="#e8b4b8" opacity="0.5" />
+      <circle cx="300" cy="288" r="12" fill="#e8b4b8" opacity="0.5" />
+      <circle cx="300" cy="300" r="8" fill="#f2e8dc" opacity="0.7" />
+    </pattern>
+    
+    <!-- Soft light overlay -->
+    <radialGradient id="light-overlay" cx="50%" cy="30%" r="70%" fx="50%" fy="30%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:white;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" />
+  
+  <!-- Water pattern -->
+  <rect width="100%" height="100%" fill="url(#water-pattern)" />
+  
+  <!-- Lily pad pattern -->
+  <rect width="100%" height="100%" fill="url(#lily-pattern)" />
+  
+  <!-- Flower pattern -->
+  <rect width="100%" height="100%" fill="url(#flower-pattern)" />
+  
+  <!-- Light overlay -->
+  <rect width="100%" height="100%" fill="url(#light-overlay)" />
+  
+  <!-- Subtle frame -->
+  <rect x="10" y="10" width="780" height="1180" stroke="#a4c6e2" stroke-width="1" fill="none" opacity="0.3" />
+</svg>
