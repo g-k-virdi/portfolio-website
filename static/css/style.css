@@ -52,8 +52,9 @@ body {
 
 /* Super simplified section styling */
 section {
-  min-height: 100vh;
-  padding-top: 120px; /* Increased from 80px to 120px to create more space below navbar */
+  min-height: auto !important; /* Force override with !important */
+  padding-top: 120px; 
+  padding-bottom: 80px !important; /* Force more padding at bottom */
 }
 
 /* Typography */
@@ -270,9 +271,20 @@ a:hover {
   width: 100%;
 }
 
+/* Dark sections */
 .section-dark {
   background-color: var(--dark-bg);
   color: var(--light);
+  min-height: 100vh !important; /* Make dark sections fill the screen */
+  display: flex;
+  flex-direction: column;
+}
+
+.section-dark .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-dark h2 {
@@ -338,13 +350,26 @@ a:hover {
 }
 
 /* Education section */
+#education {
+  min-height: 100vh !important; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
 .education-card {
   background-color: var(--light);
   border-radius: 8px;
   padding: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 80px !important; /* More space after card */
   box-shadow: 0 5px 15px var(--shadow);
   transition: transform var(--transition-normal);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .education-card:hover {
@@ -452,9 +477,15 @@ a:hover {
 
 /* Experience section */
 #experience {
-  min-height: auto; /* Override the min-height: 100vh from section */
-  padding-top: 100px; /* Reduced padding-top */
-  padding-bottom: var(--space-lg);
+  min-height: auto !important;
+  padding-top: 100px; 
+  padding-bottom: 80px !important; /* Increased padding to show all content */
+  position: relative;
+}
+
+/* Remove the fade effect */
+#experience::after {
+  display: none !important; /* Hide the gradient effect */
 }
 
 #experience .section-title {
@@ -465,22 +496,27 @@ a:hover {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: 0 !important; /* Remove bottom padding */
+  overflow: visible !important;
+  height: auto !important;
 }
 
-.timeline::before {
-  display: none;
-}
-
+/* Make all timeline items have consistent spacing */
 .timeline-item {
   position: relative;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 30px !important; /* Consistent spacing between items */
   width: 100%;
   padding: 0;
   text-align: left;
+  display: block !important;  
+  visibility: visible !important;
+  overflow: visible !important;
+  opacity: 1 !important;
 }
 
+/* Remove any variable spacing */
 .timeline-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important; /* Make the last item have no bottom margin */
 }
 
 .timeline-item::before {
@@ -490,7 +526,7 @@ a:hover {
 .timeline-content {
   background-color: var(--light);
   border-radius: 8px;
-  padding: var(--space-lg);
+  padding: 25px !important; /* Consistent padding for all timeline content */
   box-shadow: 0 5px 15px var(--shadow);
   transition: transform var(--transition-normal);
   margin: 0;
@@ -770,8 +806,10 @@ textarea.form-control {
 .footer {
   background-color: var(--primary);
   color: var(--light);
-  padding: var(--space-md) 0; /* Reduced padding */
+  padding: var(--space-md) 0;
   text-align: center;
+  position: relative !important; /* Ensure not fixed */
+  bottom: auto !important;
 }
 
 .footer-container {
@@ -966,9 +1004,11 @@ textarea.form-control {
   background-color: #2196F3;
 } 
 
+/* Extracurriculars section */
 #extracurriculars {
   background-color: var(--light-bg);
   position: relative;
+  padding-bottom: 80px !important; /* Add padding to show all content */
 }
 
 #extracurriculars::before {
@@ -982,6 +1022,10 @@ textarea.form-control {
   background-size: 20px 20px;
   opacity: 0.3;
   z-index: 0;
+}
+
+#extracurriculars::after {
+  display: none !important; /* Hide any gradient effect */
 }
 
 #extracurriculars .container {
@@ -1047,9 +1091,29 @@ textarea.form-control {
     padding: 0;
     text-align: left;
     width: 100%;
+    margin-bottom: 20px;  /* Ensure spacing between items */
+    display: block;
+    visibility: visible;
   }
   
   .timeline-content {
     margin: 0;
+  }
+} 
+
+/* Ensure consistent spacing in responsive views */
+@media (max-width: 992px) {
+  .timeline-item {
+    padding: 0 !important;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 30px !important; /* Same consistent spacing */
+    display: block;
+    visibility: visible;
+  }
+  
+  .timeline-content {
+    margin: 0 !important;
+    padding: 25px !important; /* Consistent padding */
   }
 } 
