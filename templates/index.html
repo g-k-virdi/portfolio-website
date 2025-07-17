@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ye<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,7 @@
     <title>Gurleen Kaur Virdi - Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ range(1, 10000) | random }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,7 +23,6 @@
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#extracurriculars" class="nav-link">Extracurriculars</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -37,9 +37,15 @@
         <div class="container hero-content">
             <h1 class="hero-title fade-in">Gurleen Kaur Virdi</h1>
             <p class="hero-subtitle fade-in">Industrial Engineering Student</p>
-            <p class="hero-quote fade-in">A product is only as good as someone can use it</p>
-            <p class="hero-text fade-in">I am an Industrial Engineering student with an interest in making systems more intuitive and easier to use, all while reducing strain and chances of error. I strongly believe that human factors isn't just about aesthetics, its about making a product functional because a product is only as good as the user can use it.</p>
-            <a href="#contact" class="hero-cta fade-in">Get in Touch</a>
+            <div class="hero-badge fade-in">
+                <span>Human-Centered Design & Engineering</span>
+            </div>
+            <blockquote class="hero-quote fade-in">A product is only as good as someone can use it</blockquote>
+            <p class="hero-text fade-in">I'm an Industrial Engineering student with a passion for human-centered design. I believe that great design isn't just about aesthetics—it's about creating intuitive systems that reduce cognitive load and eliminate friction.</p>
+            <div class="hero-cta-container fade-in">
+                <a href="#projects" class="hero-cta btn-primary">View My Work</a>
+                <a href="#contact" class="hero-cta btn-outline">Get in Touch</a>
+            </div>
         </div>
     </section>
 
@@ -47,15 +53,11 @@
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-container">
-                <div class="about-image fade-in">
-                    <img src="{{ url_for('static', filename='images/placeholder.svg') }}" alt="Gurleen Kaur Virdi">
-                </div>
-                <div class="about-content fade-in">
-                    <p>I am an Industrial Engineering student at the University of Toronto with a keen interest in human factors engineering and user experience design. My academic journey is focused on learning how to create systems that are intuitive, efficient, and user-friendly.</p>
-                    <p>Through my coursework and projects, I am developing skills in engineering principles, human-centered design, and data analysis. I'm passionate about applying these skills to solve real-world problems and enhance user experiences.</p>
-                    <p>Outside of my studies, I enjoy exploring new technologies and finding creative solutions to everyday challenges.</p>
-                </div>
+            <div class="about-content about-centered fade-in">
+                <h3 class="about-subtitle">Industrial Engineer with a focus on Human Factors</h3>
+                <p>I'm an Industrial Engineering student at the University of Toronto with a keen interest in human factors engineering and user experience design. My academic journey is focused on learning how to create systems that are intuitive, efficient, and user-friendly.</p>
+                <p>Through my coursework and projects, I've developed knowledge in engineering principles, human-centered design methodologies, and data-driven analysis. I'm passionate about applying these skills to solve real-world problems and enhance user experiences.</p>
+                <p>My approach combines analytical thinking with creative problem-solving to design solutions that are both functional and delightful to use.</p>
             </div>
         </div>
     </section>
@@ -65,10 +67,24 @@
         <div class="container">
             <h2 class="section-title fade-in">Education</h2>
             <div class="education-card fade-in">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
                 <p class="education-degree">Bachelor of Applied Science - Industrial Engineering</p>
                 <p class="education-school">University of Toronto</p>
                 <p class="education-period">September 2022 — June 2026</p>
-                <p class="education-coursework">Relevant Coursework: Human Factors Engineering, Foundations of Cognitive Psychology, Design & Analysis of Information Systems, Data Modelling, Organizational Design, Engineering Strategies & Practice, Engineering Economics.</p>
+                <div class="education-details">
+                    <h3 class="education-subtitle">Relevant Coursework</h3>
+                    <ul class="coursework-list">
+                        <li><span class="course-tag">Human Factors Engineering</span></li>
+                        <li><span class="course-tag">Cognitive Psychology</span></li>
+                        <li><span class="course-tag">Information Systems</span></li>
+                        <li><span class="course-tag">Data Modelling</span></li>
+                        <li><span class="course-tag">Organizational Design</span></li>
+                        <li><span class="course-tag">Engineering Strategies</span></li>
+                        <li><span class="course-tag">Engineering Economics</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -76,7 +92,7 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Skills & Technologies</h2>
+            <h2 class="section-title fade-in">Skills & Expertise</h2>
             <div class="skills-container">
                 {% for skill_category in data.skills %}
                 <div class="skill-category fade-in">
@@ -95,48 +111,46 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience & Extracurriculars Section -->
     <section id="experience" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title fade-in">Work Experience</h2>
-            <div class="timeline">
-                {% for exp in data.experience %}
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <h3>{{ exp.position }}</h3>
-                        <p class="timeline-period">{{ exp.company }} | {{ exp.period }}</p>
-                        <p class="timeline-description">{{ exp.description }}</p>
+        <div class="container experience-extracurriculars-container">
+            <div class="experience-extracurriculars-grid">
+                <div class="experience-column">
+                    <h2 class="section-title fade-in">Work Experience</h2>
+                    <div class="timeline">
+                        {% for exp in data.experience %}
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>{{ exp.position }}</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">{{ exp.company }}</span>
+                                        <span class="timeline-period">{{ exp.period }}</span>
+                                    </div>
+                                </div>
+                                <p class="timeline-description">{{ exp.description }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Extracurriculars Section -->
-    <section id="extracurriculars" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Extracurricular Activities</h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <h3>Financial Director</h3>
-                        <p class="timeline-period">University of Toronto Autism Alliance (UTAA) | September 2023 – Present</p>
-                        <p class="timeline-description">Oversee accounting operations, manage budgets, and ensure financial efficiency for the club. Collaborate with team members to plan and organize events for individuals on the autism spectrum.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <h3>Peer Mentor</h3>
-                        <p class="timeline-period">University of Toronto Indy Club | September 2023 – May 2024</p>
-                        <p class="timeline-description">Provided academic and personal support to a first-year engineering student. Fostered a supportive and inclusive environment, building rapport to facilitate effective guidance.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <h3>Digital Content Creator</h3>
-                        <p class="timeline-period">April 2023 – July 2024</p>
-                        <p class="timeline-description">Produced and translated poetry content paired with visual storytelling. Grew audience to 15K+ followers in four months across a digital platform.</p>
+                <div class="extracurriculars-column">
+                    <h2 class="section-title fade-in">Extracurriculars</h2>
+                    <div class="timeline">
+                        {% for extra in data.extracurriculars %}
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>{{ extra.position }}</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">{{ extra.company }}</span>
+                                        <span class="timeline-period">{{ extra.period }}</span>
+                                    </div>
+                                </div>
+                                <p class="timeline-description">{{ extra.description }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -146,9 +160,14 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Projects</h2>
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="projects-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ux-design">UX Design</button>
+                <button class="filter-btn" data-filter="data-science">Data Science</button>
+            </div>
             <div class="projects-grid">
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-category="ux-design">
                     <div class="project-img">
                         <i class="fas fa-users-cog"></i>
                     </div>
@@ -160,9 +179,10 @@
                             <span class="project-tag">Usability Testing</span>
                             <span class="project-tag">Prototyping</span>
                         </div>
+                        <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-category="ux-design">
                     <div class="project-img">
                         <i class="fas fa-car-alt"></i>
                     </div>
@@ -174,9 +194,10 @@
                             <span class="project-tag">React.js</span>
                             <span class="project-tag">Spring Boot</span>
                         </div>
+                        <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-category="data-science">
                     <div class="project-img">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -188,9 +209,10 @@
                             <span class="project-tag">Data Science</span>
                             <span class="project-tag">Forecasting</span>
                         </div>
+                        <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="project-card fade-in">
+                <div class="project-card fade-in" data-category="data-science">
                     <div class="project-img">
                         <i class="fas fa-hockey-puck"></i>
                     </div>
@@ -199,9 +221,10 @@
                         <p class="project-description">Built classification and regression models to predict NHL standings and simulate draft outcomes using 10 years of data. Cleaned and engineered features to improve model accuracy and performance.</p>
                         <div class="project-tags">
                             <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Data Science</span>
                             <span class="project-tag">Predictive Modeling</span>
                         </div>
+                        <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -211,7 +234,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section section-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Contact</h2>
+            <h2 class="section-title fade-in">Get In Touch</h2>
             <div class="contact-container">
                 <div class="contact-info fade-in">
                     <div class="contact-header">
@@ -219,10 +242,6 @@
                         <p>I'm always interested in new opportunities and projects related to human factors, UX design, and data analytics.</p>
                     </div>
                     <div class="contact-links">
-                        <a href="mailto:virdigurleenkaur3@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>virdigurleenkaur3@gmail.com</span>
-                        </a>
                         <a href="{{ data.contact.linkedin }}" target="_blank" class="contact-link">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
@@ -234,7 +253,7 @@
                     </div>
                 </div>
                 <div class="contact-form fade-in">
-                    <form id="contactForm">
+                    <form id="contactForm" action="mailto:virdigurleenkaur3@gmail.com" method="post" enctype="text/plain">
                         <div class="form-group">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
@@ -262,13 +281,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
-                <p class="copyright">&copy; 2024 {{ data.name }}. All rights reserved.</p>
+                <p class="copyright">&copy; 2025 {{ data.name }}. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="{{ data.contact.linkedin }}" target="_blank" class="social-link">
                         <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:{{ data.contact.email }}" class="social-link">
-                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
@@ -276,5 +292,52 @@
     </footer>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Add JS for project filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Show/hide projects based on filter
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Handle contact form submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Create formatted email content
+                const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                const mailtoLink = `mailto:virdigurleenkaur3@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+            });
+        });
+    </script>
 </body>
 </html> 
