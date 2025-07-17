@@ -7,8 +7,8 @@ app = Flask(__name__)
 portfolio_data = {
     'name': 'Gurleen Kaur Virdi',
     'title': 'Industrial Engineering Student',
-    'about': 'I am an Industrial Engineering student with an interest in making systems more intuitive and easier to use, all while reducing strain and chances of error. I strongly believe that human factors isn\'t just about aesthetics, its about making a product functional because a product is only as good as the user can use it.',
-    'quote': 'A product is only as good as someone can use it',
+    'about': 'I am an Industrial Engineering student with a passion for building human-centered designs. I strongly believe that designing isn\'t just about aesthetics, it\'s about creating intuitive systems that reduce cognitive load and eliminate friction.',
+    'quote': 'A product is only as good as it can be used',
     'skills': [
         {'category': 'UX & Human Factors', 'skill_list': [
             {'name': 'Human Factors Engineering', 'icon': 'fas fa-users-cog'},

@@ -26,9 +26,14 @@ ye<!DOCTYPE html>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -37,11 +42,16 @@ ye<!DOCTYPE html>
         <div class="container hero-content">
             <h1 class="hero-title fade-in">Gurleen Kaur Virdi</h1>
             <p class="hero-subtitle fade-in">Industrial Engineering Student</p>
-            <div class="hero-badge fade-in">
-                <span>Human-Centered Design & Engineering</span>
+            <div class="hero-badges-container fade-in">
+                <div class="hero-badge">
+                    <span>Human-Centered Design & Engineering</span>
+                </div>
+                <div class="hero-badge">
+                    <span>Data Analytics</span>
+                </div>
             </div>
-            <blockquote class="hero-quote fade-in">A product is only as good as someone can use it</blockquote>
-            <p class="hero-text fade-in">I'm an Industrial Engineering student with a passion for human-centered design. I believe that great design isn't just about aesthetics—it's about creating intuitive systems that reduce cognitive load and eliminate friction.</p>
+            <blockquote class="hero-quote fade-in">A product is only as good as it can be used</blockquote>
+            <p class="hero-text fade-in">I'm an Industrial Engineering student with a passion for building human-centered designs. I strongly believe that designing isn't just about aesthetics, it's about creating intuitive systems that reduce cognitive load and eliminate friction.</p>
             <div class="hero-cta-container fade-in">
                 <a href="#projects" class="hero-cta btn-primary">View My Work</a>
                 <a href="#contact" class="hero-cta btn-outline">Get in Touch</a>
@@ -337,6 +347,34 @@ ye<!DOCTYPE html>
                 // Open email client
                 window.location.href = mailtoLink;
             });
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            
+            // Update icon based on current theme
+            updateThemeIcon(currentTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+            
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    themeIcon.className = 'fas fa-sun';
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                }
+            }
         });
     </script>
 </body>
