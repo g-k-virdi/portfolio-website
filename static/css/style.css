@@ -52,25 +52,25 @@ html, body {
 
 /* Dark Theme Variables */
 [data-theme="dark"] {
-  --primary: #f0f4f8;      /* Very light grey-blue (lightest text) */
-  --secondary: #e1e8ed;    /* Light grey-blue (secondary text) */
-  --accent: #d1dce6;       /* Medium light grey-blue (accent text) */
-  --highlight: #c0cdd9;    /* Medium grey-blue (highlight text) */
+  --primary: #d8e2e8;      /* Muted light grey-blue (lightest text) */
+  --secondary: #c5d1d8;    /* Muted grey-blue (secondary text) */
+  --accent: #b3c0c8;       /* Muted medium grey-blue (accent text) */
+  --highlight: #a1afb8;    /* Muted grey-blue (highlight text) */
   --light: #ffffff;        /* Pure white for high contrast */
-  --light-bg: #0b1031;     /* Deep navy blue background */
-  --dark-bg: #061631;      /* Very dark navy background */
-  --text: #f0f4f8;         /* Very light grey-blue text */
-  --text-light: #e1e8ed;   /* Light grey-blue text */
-  --text-muted: #c0cdd9;   /* Medium grey-blue text */
-  --shadow: rgba(0, 0, 0, 0.5);
-  --gradient-1: linear-gradient(135deg, #0b1031 0%, #061631 100%);
-  --gradient-2: linear-gradient(135deg, #061631 0%, #030a24 100%);
-  --body-bg: linear-gradient(135deg, #030a24 0%, #061631 25%, #0b1031 75%, #061631 100%);
-  --glass-bg: rgba(240, 244, 248, 0.05);
-  --glass-border: rgba(240, 244, 248, 0.1);
-  --navbar-bg: rgba(6, 22, 49, 0.95);
-  --card-bg: rgba(11, 16, 49, 0.85);
-  --tag-bg: rgba(11, 16, 49, 0.7);
+  --light-bg: #1a2332;     /* Muted deep navy blue background */
+  --dark-bg: #141e2a;      /* Muted very dark navy background */
+  --text: #d8e2e8;         /* Muted light grey-blue text */
+  --text-light: #c5d1d8;   /* Muted grey-blue text */
+  --text-muted: #a1afb8;   /* Muted grey-blue text */
+  --shadow: rgba(0, 0, 0, 0.4);
+  --gradient-1: linear-gradient(135deg, #1a2332 0%, #141e2a 100%);
+  --gradient-2: linear-gradient(135deg, #141e2a 0%, #0f1419 100%);
+  --body-bg: linear-gradient(135deg, #0f1419 0%, #141e2a 25%, #1a2332 75%, #141e2a 100%);
+  --glass-bg: rgba(216, 226, 232, 0.04);
+  --glass-border: rgba(216, 226, 232, 0.08);
+  --navbar-bg: rgba(20, 30, 42, 0.95);
+  --card-bg: rgba(26, 35, 50, 0.85);
+  --tag-bg: rgba(26, 35, 50, 0.7);
 }
 
 body {
@@ -573,9 +573,9 @@ a:hover {
 
 /* Dark theme course tags */
 [data-theme="dark"] .course-tag {
-  background: rgba(11, 16, 49, 0.8);
+  background: rgba(26, 35, 50, 0.8);
   color: var(--primary);
-  border: 1px solid rgba(240, 244, 248, 0.2);
+  border: 1px solid rgba(216, 226, 232, 0.2);
   opacity: 0.9;
 }
 
@@ -765,16 +765,16 @@ a:hover {
 
 /* Dark theme filter buttons */
 [data-theme="dark"] .filter-btn {
-  background: rgba(11, 16, 49, 0.6);
+  background: rgba(26, 35, 50, 0.6);
   color: var(--text-light);
-  border: 1px solid rgba(240, 244, 248, 0.15);
+  border: 1px solid rgba(216, 226, 232, 0.15);
 }
 
 [data-theme="dark"] .filter-btn:hover,
 [data-theme="dark"] .filter-btn.active {
-  background: rgba(11, 16, 49, 0.9);
+  background: rgba(26, 35, 50, 0.9);
   color: var(--primary);
-  border-color: rgba(240, 244, 248, 0.3);
+  border-color: rgba(216, 226, 232, 0.3);
 }
 
 .projects-grid {
@@ -881,9 +881,9 @@ a:hover {
 
 /* Dark theme project tags */
 [data-theme="dark"] .project-tag {
-  background: rgba(11, 16, 49, 0.8);
+  background: rgba(26, 35, 50, 0.8);
   color: var(--primary);
-  border: 1px solid rgba(240, 244, 248, 0.2);
+  border: 1px solid rgba(216, 226, 232, 0.2);
   opacity: 0.9;
 }
 
@@ -1133,8 +1133,8 @@ textarea.form-control {
 
 /* Dark theme footer */
 [data-theme="dark"] .footer {
-  background: rgba(6, 22, 49, 0.8);
-  border-top: 1px solid rgba(240, 244, 248, 0.15);
+  background: rgba(20, 30, 42, 0.8);
+  border-top: 1px solid rgba(216, 226, 232, 0.15);
   color: var(--primary);
 }
 
@@ -1241,9 +1241,9 @@ textarea.form-control {
 
 /* Dark theme hero badges */
 [data-theme="dark"] .hero-badge {
-  background: rgba(11, 16, 49, 0.8);
+  background: rgba(26, 35, 50, 0.8);
   color: var(--primary);
-  border: 1px solid rgba(240, 244, 248, 0.2);
+  border: 1px solid rgba(216, 226, 232, 0.2);
 }
 
 [data-theme="dark"] .hero-badge span {
