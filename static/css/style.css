@@ -52,25 +52,25 @@ html, body {
 
 /* Dark Theme Variables */
 [data-theme="dark"] {
-  --primary: #ffffff;      /* Pure white for highest contrast */
-  --secondary: #e8f0ff;    /* Light blue-tinted text */
-  --accent: #d4e3f7;       /* Medium blue-tinted text */
-  --highlight: #b8cceb;    /* Muted blue-tinted text */
+  --primary: #f0f4f8;      /* Very light grey-blue (lightest text) */
+  --secondary: #e1e8ed;    /* Light grey-blue (secondary text) */
+  --accent: #d1dce6;       /* Medium light grey-blue (accent text) */
+  --highlight: #c0cdd9;    /* Medium grey-blue (highlight text) */
   --light: #ffffff;        /* Pure white for high contrast */
-  --light-bg: #2a3441;     /* Dark blue-gray background */
-  --dark-bg: #1a2332;      /* Very dark navy background */
-  --text: #ffffff;         /* Pure white text for maximum readability */
-  --text-light: #e8f0ff;   /* Light blue-tinted text */
-  --text-muted: #d4e3f7;   /* Medium blue text */
-  --shadow: rgba(0, 0, 0, 0.4);
-  --gradient-1: linear-gradient(135deg, #2a3441 0%, #1a2332 100%);
-  --gradient-2: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
-  --body-bg: linear-gradient(135deg, #0f1419 0%, #1a2332 25%, #2a3441 75%, #1a2332 100%);
-  --glass-bg: rgba(232, 240, 255, 0.08);
-  --glass-border: rgba(232, 240, 255, 0.15);
-  --navbar-bg: rgba(26, 35, 50, 0.95);
-  --card-bg: rgba(42, 52, 65, 0.85);
-  --tag-bg: rgba(59, 76, 99, 0.7);
+  --light-bg: #0b1031;     /* Deep navy blue background */
+  --dark-bg: #061631;      /* Very dark navy background */
+  --text: #f0f4f8;         /* Very light grey-blue text */
+  --text-light: #e1e8ed;   /* Light grey-blue text */
+  --text-muted: #c0cdd9;   /* Medium grey-blue text */
+  --shadow: rgba(0, 0, 0, 0.5);
+  --gradient-1: linear-gradient(135deg, #0b1031 0%, #061631 100%);
+  --gradient-2: linear-gradient(135deg, #061631 0%, #030a24 100%);
+  --body-bg: linear-gradient(135deg, #030a24 0%, #061631 25%, #0b1031 75%, #061631 100%);
+  --glass-bg: rgba(240, 244, 248, 0.05);
+  --glass-border: rgba(240, 244, 248, 0.1);
+  --navbar-bg: rgba(6, 22, 49, 0.95);
+  --card-bg: rgba(11, 16, 49, 0.85);
+  --tag-bg: rgba(11, 16, 49, 0.7);
 }
 
 body {
@@ -208,6 +208,12 @@ a:hover {
   transition: transform var(--transition-normal);
 }
 
+/* Dark theme logo fix */
+[data-theme="dark"] .logo-circle {
+  background: var(--primary);
+  color: var(--dark-bg);
+}
+
 .logo:hover .logo-circle {
   transform: rotate(10deg);
 }
@@ -281,6 +287,7 @@ a:hover {
 /* Hero Section */
 .hero {
   height: 100vh;
+  min-height: 600px;
   margin-top: 0;
   background: transparent;
   color: var(--text);
@@ -566,9 +573,9 @@ a:hover {
 
 /* Dark theme course tags */
 [data-theme="dark"] .course-tag {
-  background: rgba(59, 76, 99, 0.8);
+  background: rgba(11, 16, 49, 0.8);
   color: var(--primary);
-  border: 1px solid rgba(232, 240, 255, 0.2);
+  border: 1px solid rgba(240, 244, 248, 0.2);
   opacity: 0.9;
 }
 
@@ -758,16 +765,16 @@ a:hover {
 
 /* Dark theme filter buttons */
 [data-theme="dark"] .filter-btn {
-  background: rgba(59, 76, 99, 0.6);
+  background: rgba(11, 16, 49, 0.6);
   color: var(--text-light);
-  border: 1px solid rgba(232, 240, 255, 0.15);
+  border: 1px solid rgba(240, 244, 248, 0.15);
 }
 
 [data-theme="dark"] .filter-btn:hover,
 [data-theme="dark"] .filter-btn.active {
-  background: rgba(59, 76, 99, 0.9);
+  background: rgba(11, 16, 49, 0.9);
   color: var(--primary);
-  border-color: rgba(232, 240, 255, 0.3);
+  border-color: rgba(240, 244, 248, 0.3);
 }
 
 .projects-grid {
@@ -874,9 +881,9 @@ a:hover {
 
 /* Dark theme project tags */
 [data-theme="dark"] .project-tag {
-  background: rgba(59, 76, 99, 0.8);
+  background: rgba(11, 16, 49, 0.8);
   color: var(--primary);
-  border: 1px solid rgba(232, 240, 255, 0.2);
+  border: 1px solid rgba(240, 244, 248, 0.2);
   opacity: 0.9;
 }
 
@@ -1126,8 +1133,8 @@ textarea.form-control {
 
 /* Dark theme footer */
 [data-theme="dark"] .footer {
-  background: rgba(26, 35, 50, 0.8);
-  border-top: 1px solid rgba(232, 240, 255, 0.15);
+  background: rgba(6, 22, 49, 0.8);
+  border-top: 1px solid rgba(240, 244, 248, 0.15);
   color: var(--primary);
 }
 
@@ -1234,9 +1241,9 @@ textarea.form-control {
 
 /* Dark theme hero badges */
 [data-theme="dark"] .hero-badge {
-  background: rgba(42, 52, 65, 0.8);
+  background: rgba(11, 16, 49, 0.8);
   color: var(--primary);
-  border: 1px solid rgba(232, 240, 255, 0.2);
+  border: 1px solid rgba(240, 244, 248, 0.2);
 }
 
 [data-theme="dark"] .hero-badge span {
@@ -1353,12 +1360,38 @@ textarea.form-control {
     display: block;
   }
   
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0 50px;
+  }
+  
+  .hero-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
   .hero-title {
     font-size: 3rem;
   }
   
   .hero-subtitle {
     font-size: 1.2rem;
+  }
+  
+  .hero-quote {
+    font-size: 1.2rem;
+  }
+  
+  .hero-badges-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .hero-cta-container {
+    flex-direction: column;
+    gap: 1rem;
   }
   
   .projects-grid {
@@ -1376,12 +1409,47 @@ textarea.form-control {
     padding: 0 var(--space-md);
   }
   
+  .hero {
+    min-height: 100vh;
+    padding: 80px 0 40px;
+  }
+  
+  .hero-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
   
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
   .hero-quote {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  
+  .hero-text {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  
+  .hero-badge {
+    font-size: 0.85rem;
+    padding: 6px 16px;
+  }
+  
+  .hero-cta {
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
   }
   
   .skills-grid {
