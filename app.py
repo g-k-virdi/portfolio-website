@@ -76,7 +76,7 @@ portfolio_data = {
             'company': 'Data Joins',
             'location': 'Remote',
             'period': 'June 2025 – Present',
-            'description': 'Perform data cleaning, exploratory data analysis (EDA), and predictive modeling on datasets like purchase and export dataset. Develop interactive dashboards to visualize key performance indicators and enable data-driven decision-making for client stakeholders.'
+            'description': 'Perform data cleaning, exploratory data analysis (EDA), and predictive modeling on datasets like purchase and export dataset. Develop interactive dashboards to visualize key performance indicators and enable data-driven decision-making.'
         },
         {
             'position': 'Team Member',
@@ -106,7 +106,7 @@ portfolio_data = {
             'company': 'University of Toronto Indy Club',
             'location': 'Toronto, Ontario, Canada',
             'period': 'September 2023 – May 2024',
-            'description': 'Provided academic and personal support to a first-year engineering student. Fostered a supportive and inclusive environment, building rapport to facilitate effective guidance.'
+            'description': 'Provided academic and personal support to a first-year engineering student.'
         },
         {
             'position': 'Digital Content Creator',
